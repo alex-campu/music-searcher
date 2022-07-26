@@ -1,21 +1,11 @@
-import { useEffect, useState } from 'react'
-import { getMusicReleasesThunk } from './actions'
-import { DispatchTypes } from './actions/types'
+import { useState } from 'react'
 import './App.css'
-import { SearchBar } from './components/SearchBar'
-import { useAppDispatch } from './utils/hooks'
 
 function App() {
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(getMusicReleasesThunk())
-  }, [])
 
   return (
     <div className="App">
-      <SearchBar />
-
+      Hello
     </div>
   )
 }

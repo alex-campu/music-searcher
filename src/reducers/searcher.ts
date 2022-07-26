@@ -1,30 +1,24 @@
 import { Reducer } from 'redux'
-import { SEARCH_QUERY, RELEASES, DispatchTypes } from '../actions/types'
+import { ActionEnum, ActionType } from '../actions/types'
+
+const { SEARCH_QUERY } = ActionEnum
 
 type searcherStateType = {
     searchQuery: string
-    releases: []
 }
 
 const initialState: searcherStateType = {
     searchQuery: '',
-    releases: []
 }
 
-export const searcherReducer = (state: searcherStateType = initialState, action: DispatchTypes): searcherStateType => {
+export const searcherReducer = (state: searcherStateType = initialState, action: ActionType) => {
     switch (action.type) {
         case SEARCH_QUERY:
             return {
                 ...state,
                 searchQuery: action.payload
             }
-        case RELEASES:
-            return {
-                ...state,
-                releases: action.payload
-            }
         default:
             return state;
     }
 }
-

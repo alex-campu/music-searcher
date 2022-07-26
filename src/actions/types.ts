@@ -1,15 +1,8 @@
-export const SEARCH_QUERY = 'SEARCH_QUERY'
-export const RELEASES = 'RELEASES'
+export enum ActionEnum {
+    SEARCH_QUERY = 'SEARCH_QUERY'
+}
 
-export interface SearchQueryType {
-    type: typeof SEARCH_QUERY,
+export interface ActionType {
+    type: ActionEnum,
     payload: string
 }
-
-
-export interface ReleasesType {
-    type: typeof RELEASES,
-    payload: []
-}
-
-export type DispatchTypes = SearchQueryType | ReleasesType
