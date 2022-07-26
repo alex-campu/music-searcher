@@ -21,4 +21,5 @@
 
 nav {
   border: solid 1px white;
+  width: calc(100vw - 4rem);
 }

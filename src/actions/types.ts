@@ -1,5 +1,6 @@
 export const SEARCH_QUERY = 'SEARCH_QUERY'
 export const RELEASES = 'RELEASES'
+export const HISTORY = 'HISTORY'
 
 export interface SearchQueryType {
     type: typeof SEARCH_QUERY,
@@ -25,4 +26,9 @@ export interface ReleasesType {
     payload: ReleasesModel
 }
 
-export type DispatchTypes = SearchQueryType | ReleasesType
+export interface HistoryType {
+    type: typeof HISTORY,
+    payload: string[]
+}
+
+export type DispatchTypes = SearchQueryType | ReleasesType | HistoryType

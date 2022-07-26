@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getMusicReleasesThunk } from './actions'
+import { getMusicReleasesThunk, setHistory } from './actions'
 import { DispatchTypes, ReleaseResults, ReleasesModel } from './actions/types'
 import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom'
 import './App.css'
@@ -39,6 +39,12 @@ export function App() {
   const releases = useSelector((state: searcherStateType) => state.releases)
   useEffect(() => {
     // dispatch(getMusicReleasesThunk())
+    const history = window.localStorage.getItem('history')
+    let parsedHistory = [];
+    if (history) {
+      parsedHistory = JSON.parse(history)
+    }
+    dispatch(setHistory(parsedHistory))
   }, [])
 
   return (

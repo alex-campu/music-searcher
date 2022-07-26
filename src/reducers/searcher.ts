@@ -1,9 +1,10 @@
 import { Reducer } from 'redux'
-import { SEARCH_QUERY, RELEASES, DispatchTypes, ReleasesModel } from '../actions/types'
+import { SEARCH_QUERY, RELEASES, HISTORY, DispatchTypes, ReleasesModel } from '../actions/types'
 
 export type searcherStateType = {
-    searchQuery: string
-    releases: ReleasesModel
+    searchQuery: string;
+    releases: ReleasesModel;
+    history: string[];
 }
 
 const initialState: searcherStateType = {
@@ -11,7 +12,8 @@ const initialState: searcherStateType = {
     releases: {
         pagination: { pages: 0 },
         results: []
-    }
+    },
+    history: []
 }
 
 export const searcherReducer = (state: searcherStateType = initialState, action: DispatchTypes): searcherStateType => {
@@ -25,6 +27,11 @@ export const searcherReducer = (state: searcherStateType = initialState, action:
             return {
                 ...state,
                 releases: action.payload
+            }
+        case HISTORY:
+            return {
+                ...state,
+                history: action.payload
             }
         default:
             return state;
