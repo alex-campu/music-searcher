@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { API_URLS } from './servicesRoutes'
 
-const token = process.env.VITE_TOKEN
+const token = import.meta.env.VITE_TOKEN
 
 type paramsType = {
   [key: string]: string | undefined
