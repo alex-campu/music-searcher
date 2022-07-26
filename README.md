@@ -1,1 +1,33 @@
-# music-searcher
+# Music Searcher
+
+Search music by artis, album, song, and more!
+
+## Discogs
+
+This music searcher is consuming discogs API, https://www.discogs.com/developers/
+
+## Stack
+- React as UI library
+- Redux for state management
+- Typescript as typed development language
+- [Vite](https://vitejs.dev/) for building and development server 
+
+### Linter
+This project is following [Standard.js](https://standardjs.com/)
+
+### Local setup:
+
+`
+npm install
+`
+- Set up env variables:
+```
+cp .env.example .env
+```
+Add discogs user token: 
+- Go to https://www.discogs.com/settings/developers
+- Click "Generate new token"
+
+```
+npm run dev
+```
