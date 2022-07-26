@@ -2,13 +2,14 @@ import { useState } from 'react'
 import style from './SearchBar.module.css'
 import { useAppDispatch } from '../../utils/hooks'
 import { getMusicReleasesThunk } from '../../actions/index'
+import { DispatchTypes } from '../../actions/types'
 
 export const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('')
     const dispatch = useAppDispatch()
 
     const handleSearch = () => {
-        dispatch(getMusicReleasesThunk(searchQuery))
+        dispatch(getMusicReleasesThunk(searchQuery) as unknown as DispatchTypes)
     }
     return (
         <>

@@ -2,6 +2,9 @@
 
 Search music by artis, album, song, and more!
 
+# Live demo
+Please visit [the live demo](https://alex-campu.github.io/music-searcher-live/)
+
 ## Discogs
 
 This music searcher is consuming discogs API, https://www.discogs.com/developers/

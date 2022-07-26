@@ -53,7 +53,7 @@ export function App() {
         <div>
           <nav>
             <ul>
-              <li><Link to='/home'> Home</Link></li>
+              <li><Link to='/'> Home</Link></li>
               <li><Link to='/history'> History</Link></li>
 
             </ul>
@@ -62,9 +62,9 @@ export function App() {
 
 
         <Routes>
-          <Route path='home' element={<Home {...releases} />} />
+          <Route path='/' element={<Home {...releases} />} />
           <Route path='history' element={<History />} />
-          <Route path='*' element={<Navigate replace to='home' />} />
+          <Route path='*' element={<Navigate replace to='/' />} />
         </Routes>
 
 

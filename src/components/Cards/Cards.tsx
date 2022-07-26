@@ -1,4 +1,4 @@
-import { ReleaseResults } from 'actions/types';
+import { ReleaseResults } from '@/actions/types';
 import React from 'react'
 import styles from './Cards.module.css'
 

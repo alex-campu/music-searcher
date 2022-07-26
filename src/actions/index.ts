@@ -1,19 +1,19 @@
 
 import { Dispatch } from "redux"
 import { releasesService } from "../services"
-import { SEARCH_QUERY, RELEASES, HISTORY, DispatchTypes } from "./types"
+import { SEARCH_QUERY, RELEASES, HISTORY, DispatchTypes, HistoryType, ReleasesType, ReleasesModel } from "./types"
 
 export const searchMusic = (payload: string) => ({
   type: SEARCH_QUERY,
   payload
 })
 
-export const setReleases = (payload: []) => ({
+export const setReleases = (payload: ReleasesModel): ReleasesType => ({
   type: RELEASES,
   payload
 })
 
-export const setHistory = (payload: string[]) => ({
+export const setHistory = (payload: string[]): HistoryType => ({
   type: HISTORY,
   payload
 })
@@ -40,10 +40,7 @@ export const getMusicReleasesThunk = (query: string) => async (dispatch: Dispatc
 
     saveToHistory()
 
-    dispatch({
-      type: RELEASES,
-      payload: data
-    })
+    dispatch(setReleases(data))
 
 
   } catch (error) {

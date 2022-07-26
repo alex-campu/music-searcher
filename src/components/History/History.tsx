@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { searcherStateType } from 'reducers/searcher'
+import { searcherStateType } from '@/reducers/searcher'
 import '../../App.css'
 import styles from './History.module.css'
 
@@ -21,7 +21,7 @@ export const History = () => {
 
                 </ul>
                 :
-                <p>No history found, <Link to='/home'>search music!</Link></p>
+                <p>No history found, <Link to='/'>search music!</Link></p>
             }
         </>
 
