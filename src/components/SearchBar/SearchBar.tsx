@@ -7,11 +7,14 @@ export const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('')
     const dispatch = useAppDispatch()
 
+    const handleSearch = () => {
+        dispatch(getMusicReleasesThunk(searchQuery))
+    }
     return (
         <>
-            <input placeholder='Search something...' className={style.bar} type='text' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            <input placeholder='Search by artist, album, etc...' className={style.bar} type='text' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
 
-            <button className={style.button} onClick={() => dispatch(getMusicReleasesThunk(searchQuery))}>Go!</button>
+            <button className={style.button} onClick={handleSearch}>Go!</button>
         </>
     )
 }

@@ -7,7 +7,7 @@ import { MusicCard } from './components/Cards/Cards'
 import { useAppDispatch } from './utils/hooks'
 import { result } from './utils/mock'
 import { useSelector } from 'react-redux'
-import { searcherStateType } from 'reducers/searcher'
+import { searcherStateType } from './reducers/searcher'
 
 
 function App() {
@@ -19,11 +19,24 @@ function App() {
 
   return (
     <div className="App">
-      <div className="search-bar-container">
+      <div>
+        <nav>
+          <ul>
+            <li>Home</li>
+            <li>History</li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <h1 className='home-title'>Discogs Music Searcher</h1>
+      <div className='search-bar-container'>
         <SearchBar />
       </div>
 
-      <div className="cards-container">
+
+
+      <div className='cards-container'>
         {releases && releases?.results?.map((item: ReleaseResults) => (
           <>
             {item?.thumb && item?.title &&

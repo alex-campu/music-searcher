@@ -4,8 +4,8 @@ import App from './App'
 import './index.css'
 import { searcherReducer } from './reducers/searcher'
 import { Provider } from 'react-redux'
-import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux'
-import thunk from 'redux-thunk'
+import { Action, applyMiddleware, compose, legacy_createStore as createStore } from 'redux'
+import thunk, { ThunkAction } from 'redux-thunk'
 
 declare global {
   interface Window {
@@ -19,6 +19,8 @@ const composedEnhancers = composers(applyMiddleware(thunk))
 const store = createStore(searcherReducer, composedEnhancers)
 
 export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
