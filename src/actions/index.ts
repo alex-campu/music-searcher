@@ -13,10 +13,10 @@ export const setReleases = (payload: []) => ({
   payload
 })
 
-export const getMusicReleasesThunk = () => async (dispatch: Dispatch<DispatchTypes>) => {
+export const getMusicReleasesThunk = (query: string) => async (dispatch) => {
 
   try {
-    const { data } = await releasesService.get()
+    const { data } = await releasesService.get(query)
 
     dispatch({
       type: RELEASES,

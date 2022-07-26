@@ -8,9 +8,9 @@ type paramsType = {
 }
 const paramsHandler = (route: string, params?: paramsType) => {
   if (params?.token) {
-    return params?.query ? `${route}?token=${token}&query=${params.query}` : `${route}?token=${token}`
+    return params?.query ? `${route}?token=${token}&q=${params.query}` : `${route}?token=${token}`
   }
-  return params?.query ? `${route}?query=${params.query}` : route
+  return params?.query ? `${route}?q=${params.query}` : route
 }
 
 export const generalService = (route: string) => {

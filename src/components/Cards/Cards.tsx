@@ -1,21 +1,13 @@
+import { ReleaseResults } from 'actions/types';
 import React from 'react'
 import styles from './Cards.module.css'
 
-interface MusiCardProps {
-    title: string;
-    thumb: string;
-    genre: string[];
-    style: string[];
-    year: string;
-    country: string;
-}
-
-export const MusicCard: React.FC<MusiCardProps> = ({ title, thumb,
+export const MusicCard: React.FC<ReleaseResults> = ({ title, thumb,
     genre,
     style,
     year,
     country
-}: MusiCardProps) => {
+}: ReleaseResults) => {
 
     const pluralFormatter = (input: string[], label: string) => {
         const labelTitle = input.length > 1 ? `${label}s` : label
@@ -32,10 +24,19 @@ export const MusicCard: React.FC<MusiCardProps> = ({ title, thumb,
 
                 <img className={styles.picture} src={thumb} />
 
-                <p className={styles.info} >{pluralFormatter(genre, 'Genre')}</p>
-                <p className={styles.info} >{pluralFormatter(style, 'Style')}</p>
+                {genre &&
+                    <p className={styles.info} >{pluralFormatter(genre, 'Genre')}</p>
 
-                <p className={styles.info} >Year: {year}</p>
+                }
+                {style &&
+                    <p className={styles.info} >{pluralFormatter(style, 'Style')}</p>
+                }
+
+                {year &&
+                    <p className={styles.info} >Year: {year}</p>
+                }
+
+                {!genre && !style && !year && <p>No Information Available</p>}
             </div>
 
         </>

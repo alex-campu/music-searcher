@@ -1,13 +1,13 @@
 #root {
   max-width: 1280px;
   padding: 2rem;  
-   /* margin: 0 auto;
-  text-align: center; */
+
 }
 
 .cards-container{
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .search-bar-container{

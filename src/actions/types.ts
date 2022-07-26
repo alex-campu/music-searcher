@@ -6,10 +6,23 @@ export interface SearchQueryType {
     payload: string
 }
 
+export interface ReleaseResults {
+    title: string;
+    thumb: string;
+    genre: string[];
+    style: string[];
+    year: string;
+    country: string;
+}
+
+export type ReleasesModel = {
+    pagination: { [key: string]: number };
+    results: ReleaseResults[] | []
+}
 
 export interface ReleasesType {
     type: typeof RELEASES,
-    payload: []
+    payload: ReleasesModel
 }
 
 export type DispatchTypes = SearchQueryType | ReleasesType

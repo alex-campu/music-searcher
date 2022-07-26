@@ -1,6 +1,16 @@
 .bar {
-    /* display: block; */
     height: 32px;
-    /* margin: 0 auto; */
-    /* text-align: center; */
+    background-color: #1a1a1a;
+    border:1px solid white;
+    color: white;
+    border-radius: 5px 0 0 5px;
+}
+
+.button {    
+    height: 36px;
+    width: 50px;
+    border:1px solid white;
+    color: white;
+    padding: 0;
+    border-radius: 0 5px 5px 0;
 }

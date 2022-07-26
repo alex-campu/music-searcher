@@ -1,14 +1,17 @@
 import { Reducer } from 'redux'
-import { SEARCH_QUERY, RELEASES, DispatchTypes } from '../actions/types'
+import { SEARCH_QUERY, RELEASES, DispatchTypes, ReleasesModel } from '../actions/types'
 
-type searcherStateType = {
+export type searcherStateType = {
     searchQuery: string
-    releases: []
+    releases: ReleasesModel
 }
 
 const initialState: searcherStateType = {
     searchQuery: '',
-    releases: []
+    releases: {
+        pagination: { pages: 0 },
+        results: []
+    }
 }
 
 export const searcherReducer = (state: searcherStateType = initialState, action: DispatchTypes): searcherStateType => {
