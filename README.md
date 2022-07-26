@@ -24,7 +24,7 @@ npm install
 ```
 cp .env.example .env
 ```
-Add discogs user token: 
+Add discogs user token to your .env:
 - Go to https://www.discogs.com/settings/developers
 - Click "Generate new token"
 
