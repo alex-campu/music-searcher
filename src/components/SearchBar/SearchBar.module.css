@@ -1,4 +1,6 @@
 .bar {
-    display: block;
+    /* display: block; */
     height: 32px;
+    /* margin: 0 auto; */
+    /* text-align: center; */
 }

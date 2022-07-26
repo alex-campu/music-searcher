@@ -28,6 +28,7 @@ body {
   margin: 0;
   display: flex;
   /* place-items: center; */
+  background-color: #1a1a1a;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -56,10 +57,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: white;
+    background-color: black;
   }
   a:hover {
     color: #747bff;
