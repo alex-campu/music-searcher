@@ -34,3 +34,5 @@ Add discogs user token to your .env:
 ```
 npm run dev
 ```
+
+[![Build Status](https://dev.azure.com/alexcampu/Agile%20az%20400/_apis/build/status/alex-campu.music-searcher?branchName=main)](https://dev.azure.com/alexcampu/Agile%20az%20400/_build/latest?definitionId=7&branchName=main)
